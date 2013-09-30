@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="nl">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>Het is weer woensdag! Wat voor friet????</title>
+		<meta name="description" content="Woensdag frietdag! Kies hier wat voor friet!">
+		<meta property="og:title" content="Het Is Weer Woensdag! Woensdag frietdag!">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="http://hetisweerwoensdag.nl/">
+		<meta property="og:image" content="http://hetisweerwoensdag.nl/friet.png">
+		<meta property="og:site_name" content="Het Is Weer Woensdag!">
+		<meta property="og:description" content="Woensdag frietdag! Kies hier wat voor friet!">
+		<link href="style.css" rel="stylesheet">
+		<link href="http://fonts.googleapis.com/css?family=Lilita+One" rel="stylesheet">
+		<script>
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-28959555-1']);
+			_gaq.push(['_trackPageview']); (function() {
+				var ga = document.createElement('script');
+				ga.type = 'text/javascript';
+				ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<h1>Het is weer woensdag!</h1>
+			<h2>Wat voor friet?</h2>
+			<div id="slotWrapper">
+				<ul class="slot slot1">
+					<li>Frietje met</li>
+					<li>Frietje joppie</li>
+					<li>Frietje sat&eacute; mayo</li>
+					<li>Frietje speciaal</li>
+					<li>Frietje oorlog</li>
+					<li>Frietje tartaarsaus</li>
+					<li>Frietje stoofvlees</li>
+				</ul><button id="lockslot1">Lock</button>
+				<p>
+					Met een
+				</p>
+				<ul class="slot slot2">
+					<li>Frikandel</li>
+					<li>Kroket</li>
+					<li>Goulashkroket</li>
+					<li>Mexicano</li>
+					<li>Kaassouffl&eacute;</li>
+					<li>Berenklauw</li>
+					<li>Hotwings</li>
+					<li>Knoepert</li>
+					<li>Lange lummel</li>
+					<li>Viandel</li>
+					<li>Mix-stick</li>
+					<li>Pikanto</li>
+					<li>Sitostick</li>
+					<li>Bal gehakt</li>
+					<li>Kipcorn</li>
+					<li>Sat&eacute;rol</li>
+					<li>Bamischijf</li>
+					<li>Nasibal</li>
+					<li>Goulashkroket</li>
+					<li>Gehaktstaaf</li>
+				</ul><button id="lockslot2">Lock</button>
+				<br />
+				<p>
+					met
+				</p>
+				<ul class="slot slot3">
+					<li>Mayo</li>
+					<li>Joppie</li>
+					<li>Sat&eacute;</li>
+					<li>Zonder</li>
+					<li>Curry</li>
+					<li>Speciaal</li>
+				</ul><button id="lockslot3">Lock</button>
+			</div>
+			<input type="button" name="playButton" id="playButton" value="Kies je menu!">
+			<p>
+				<span class='st_facebook_vcount' displayText='Facebook'></span>
+				<span class='st_twitter_vcount' displayText='Tweet'></span>
+			</p>
+			<p>
+				<a href="https://www.facebook.com/hetisweerwoensdag">Bekijk ook onze Facebook pagina!</a>
+			</p>
+		</div>
+		<script src="jquery-1.8.1.min.js"></script>
+		<script src="jquery.jSlots.js"></script>
+		<script src="jquery.easing.1.3.js"></script>
+		<script>
+			$(document).ready(function(){
+				$(".slot").jSlots({spinner: "#playButton",  easing : 'swing', number : 1});
+				$('#lockslot1').toggle(function() {
+					$(".slot.slot1").unwrap();
+					$(".slot.slot1").addClass("lock");
+					$(".slot.slot1").jSlots({loops: 0, number : 1});
+					$(".slot.slot1 li:last-child").remove();
+				}, function() {
+					$(".slot.slot1").unwrap();
+					$(".slot.slot1").removeClass("lock");
+					$(".slot.slot1").jSlots({spinner: "#playButton",  easing : 'swing', number : 1});
+					$(".slot.slot1 li:last-child").remove();
+				});
+				$('#lockslot2').toggle(function() {
+					$(".slot.slot2").unwrap();
+					$(".slot.slot2").addClass("lock");
+					$(".slot.slot2").jSlots({loops: 0, number : 1});
+					$(".slot.slot2 li:last-child").remove();
+				}, function() {
+					$(".slot.slot2").unwrap();
+					$(".slot.slot2").removeClass("lock");
+					$(".slot.slot2").jSlots({spinner: "#playButton",  easing : 'swing', number : 1});
+					$(".slot.slot2 li:last-child").remove();
+				});
+				$('#lockslot3').toggle(function() {
+					$(".slot.slot3").unwrap();
+					$(".slot.slot3").addClass("lock");
+					$(".slot.slot3").jSlots({loops: 0, number : 1});
+					$(".slot.slot3 li:last-child").remove();
+				}, function() {
+					$(".slot.slot3").unwrap();
+					$(".slot.slot3").removeClass("lock");
+					$(".slot.slot3").jSlots({spinner: "#playButton",  easing : 'swing', number : 1});
+					$(".slot.slot3 li:last-child").remove();
+				});
+			});
+			$(window).load(function(){
+				$("#playButton").trigger("click");
+			});
+		</script>
+		<script src="http://w.sharethis.com/button/buttons.js"></script>
+		<script>stLight.options({publisher: "f725b769-793b-4f01-adeb-7bba5c53f08d"}); </script>
+	</body>
+</html>
